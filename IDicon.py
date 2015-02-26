@@ -71,6 +71,5 @@ if __name__ == '__main__':
   print ("Creating Canvas...")
   ID=IDicon(width, height,nun)
   print ("Writing to file...")
-  f = open("test.png", "wb")
-  f.write(ID)
-  f.close()
+  with open("test.png", "wb") as f:
+     f.write(ID)
