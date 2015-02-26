@@ -8,7 +8,14 @@ class PNGCanvas:
     self.color = color #rgb
     self.bgcolor = bgcolor #rgb
     self.canvas = bytearray(self.bgcolor * 3 * width * height)
-
+  
+  def point(self,x,y,color=None):
+    if x<0 or y<0 or x>self.size-1 or y>self.size-1: return
+    if color == None:
+      color = self.color
+    o=y*self.width*3+x*3  
+    self.canvas[o:o+3]=color
+    
   def block(self,x,y,color=None):
     if x<0 or y<0 or x>self.size-1 or y>self.size-1: return
     if color == None:
